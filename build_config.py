@@ -1,6 +1,10 @@
 import requests
 import os
 
+domain = "localhost"
+
+if os.environ['domain']:
+  domain = os.environ['domain']
 
 print "cleaning nginx user config"
 # L O L
@@ -22,6 +26,7 @@ for s in r.json()["node"]["nodes"]:
   template = open("template.conf", "r").read()
 
   mapping = [
+    ["<domain>", domain],
     ["<container_name>", subdomain],
     ["<container_ip>", container_ip],
     ["<container_port>",container_port],
