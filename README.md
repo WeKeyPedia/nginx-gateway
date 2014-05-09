@@ -23,5 +23,5 @@ The intent is to make every apps contained in a CoreOS host available as separed
 ## usage
 
 ```shell
-$ docker run -d -p 80:80 wekeypedia/nginx-localhost
+$ docker run -d -p 80:80 -e domain=localhost wekeypedia/nginx
 ```
