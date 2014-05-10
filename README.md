@@ -30,3 +30,6 @@ The intent is to make every apps contained in a CoreOS host available as separed
 ```shell
 $ docker run -d -p 80:80 -e domain=localhost wekeypedia/nginx
 ```
+
+- `-p 80:80` to bridge the nginx webserver with the host port 80
+- `-e domain=localhost` to setup the domain used by nginx (`localhost` is the default value is none is provided)
