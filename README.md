@@ -11,12 +11,17 @@ The intent is to make every apps contained in a CoreOS host available as separed
 ### example
 
 ```
-[api container:3000] ---> api.localhost:80
-[front container:3000] ---> front.localhost:80
+      docker                      server                       browser
+
+[mongodb container]
+         |
+[api container:3000]   <---> api.localhost:80    <------|
+                                                        |
+[front container:3000] <---> front.localhost:80  <---------->  client
 
 + dev mode:
 
-[neo4j container:7474] ---> neo4j.localhost:80
+[neo4j container:7474] <---> neo4j.localhost:80
 ```
 
 
